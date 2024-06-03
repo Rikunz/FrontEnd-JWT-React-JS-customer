@@ -11,10 +11,10 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/login', {
+            await axios.post('https://customer-zd55fboz5a-uc.a.run.app/login', {
                 email: email,
                 password: password
-            });
+            }, { withCredentials: true });
             history.push("/dashboard");
         } catch (error) {
             if (error.response) {
